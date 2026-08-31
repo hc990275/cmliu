@@ -95,6 +95,26 @@
       "ui": [
         "gui"
       ]
+    },
+    {
+      "id": "guanfang-youxuan",
+      "name": "guanfang-youxuan",
+      "author": "liyanan2016-stack",
+      "url": "https://github.com/liyanan2016-stack/guanfang-youxuan",
+      "stars": 16,
+      "forks": 5,
+      "description": "从 Cloudflare 官方公布的 IP 段随机生成候选并两阶段测速优选，支持回源状态码校验、地区筛选与指定 IP 段，输出当前网络下最快的 IP，提供 Android 原生界面与桌面 Web UI",
+      "platforms": [
+        "android-arm64",
+        "android-universal",
+        "win-amd64",
+        "linux-amd64"
+      ],
+      "ui": [
+        "gui",
+        "webui"
+      ],
+      "stats_updated_at": "2026-08-31T12:47:40Z"
     }
   ]
 }
