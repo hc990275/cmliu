@@ -5,7 +5,7 @@
       "name": "CFData-WEB",
       "author": "PoemMisty",
       "url": "https://github.com/PoemMisty/CFData-WEB",
-      "stars": 1059,
+      "stars": 9999,
       "forks": 254,
       "description": "基于 Go 的 Cloudflare IP 测试与筛选工具，支持官方/非标优选、测速与导出，提供本地 Web 与 CLI 两种方式",
       "platforms": [
@@ -20,7 +20,8 @@
       "ui": [
         "webui",
         "cli"
-      ]
+      ],
+      "stats_updated_at": "2026-08-31T06:39:07Z"
     },
     {
       "id": "cloudflarescan",
@@ -46,7 +47,7 @@
       "author": "xinyitang3",
       "url": "https://github.com/xinyitang3/cfnb",
       "stars": 768,
-      "forks": 290,
+      "forks": 291,
       "description": "全自动 Cloudflare CDN 节点优选工具，支持 TCP/HTTP 延迟抖动检测与真实带宽测速，聚合多源节点并自动更新至 Cloudflare DNS，支持微信通知与定时运行",
       "platforms": [
         "win",
@@ -54,7 +55,8 @@
       ],
       "ui": [
         "cli"
-      ]
+      ],
+      "stats_updated_at": "2026-08-31T06:39:07Z"
     },
     {
       "id": "cfnatddnsgo",

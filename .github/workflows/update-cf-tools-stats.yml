@@ -1,0 +1,44 @@
+name: 更新 CF 工具 Star/Fork 数
+
+on:
+  schedule:
+    # 每天 00:00（北京时间）= 16:00 UTC 自动运行
+    - cron: "0 16 * * *"
+  workflow_dispatch: # 允许在 Actions 页面手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    name: 同步 GitHub Star/Fork
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: 配置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: 安装依赖
+        run: pip install requests
+
+      - name: 更新 Star/Fork 数据
+        env:
+          # GH_TOKEN 为私密凭据，在 仓库 Settings → Secrets 中配置（建议用有 repo 权限的 PAT）
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          # 目标 JSON 路径（相对仓库根目录），默认 json/best-cf-tools.json
+          JSON_FILE: json/best-cf-tools.json
+        run: python scripts/update_cf_tools_stats.py
+
+      - name: 提交并推送更改
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add json/best-cf-tools.json
+          git commit -m "chore: 同步 CF 工具 star/fork 实时数据" || echo "没有需要提交的变更"
+          git push
